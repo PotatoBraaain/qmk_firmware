@@ -48,7 +48,8 @@ bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
     }
     // RGB_MATRIX_INDICATOR_SET_COLOR(index, red, green, blue);
 
-    if (host_keyboard_led_state().num_lock) {
+    // if (host_keyboard_led_state().num_lock) {
+    if (!host_keyboard_led_state().num_lock) {
         RGB_MATRIX_INDICATOR_SET_COLOR(NUM_LOCK_LED_INDEX, 255, 255, 255);
     } else {
         if (!rgb_matrix_get_flags()) {
